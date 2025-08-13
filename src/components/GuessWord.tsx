@@ -1,27 +1,27 @@
-import WORDS from "../utils/words";
+import type { GuessItem } from "../types/game";
 
-function GuessWord() {
-    const randomWord = () => {
-        const randomItemNumber = Math.floor(Math.random() * WORDS.length);
-        const word = WORDS[randomItemNumber].toUpperCase().split("");
-        return word;
-    };
+interface GuessWordProps {
+    wordToGuess: GuessItem[];
+}
 
-    const itemToGuess = randomWord();
-    console.log(itemToGuess);
-
+function GuessWord({ wordToGuess }: GuessWordProps) {
     return (
         <div className="flex flex-row gap-0.5">
-            {itemToGuess.map((item) => (
-                <div
-                    key={crypto.randomUUID()}
-                    className="flex h-16 w-16 items-center justify-center border-b-2 border-[#F9F4DA] bg-[#323232]"
-                >
-                    <div className="font-Han text-2xl font-extrabold text-[#F9F4DA]">
-                        {item}
+            {wordToGuess.map((entry: any, index: number) => {
+                return (
+                    <div
+                        key={index}
+                        className="flex h-16 w-16 items-center justify-center border-b-2 border-[#F9F4DA] bg-[#323232]"
+                    >
+                        <div
+                            className="font-Han text-2xl font-extrabold"
+                            style={{ color: entry.textColor }}
+                        >
+                            {entry.isVisible && entry.letter}
+                        </div>
                     </div>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 }
