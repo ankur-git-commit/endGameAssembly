@@ -1,7 +1,8 @@
 import WORDS from "./words";
 
-export const randomNumberGenerator = (inputString: number) => {
-    const randomNumber = Math.floor(Math.random() * inputString)
+export const randomNumberGenerator = (inputArray: string[]) => {
+    const arrayLength = inputArray.length
+    const randomNumber = Math.floor(Math.random() * arrayLength)
     return randomNumber
 }
 
@@ -10,7 +11,7 @@ export const randomNumberGenerator = (inputString: number) => {
 // }
 
 export const randomWordGenerator = () => {
-    const indexNumber = randomNumberGenerator(WORDS.length)
+    const indexNumber = randomNumberGenerator(WORDS)
     const randomWord = WORDS[indexNumber];
     const wordObject = Array.from(randomWord, (element) => {
         return {

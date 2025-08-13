@@ -6,7 +6,7 @@ interface GuessWordProps {
 
 function GuessWord({ wordToGuess }: GuessWordProps) {
     return (
-        <div className="flex flex-row gap-0.5">
+        <div className="flex flex-row gap-0.5 px-2">
             {wordToGuess.map((entry: any, index: number) => {
                 return (
                     <div

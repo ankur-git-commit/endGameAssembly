@@ -3,7 +3,7 @@ import ALPHABETS from "../utils/alphabets";
 
 function Keyboard({ keyLogger, keyPressed, wordToGuess }: any) {
     return (
-        <div className="flex w-full flex-col items-center justify-center gap-2">
+        <div className="flex w-full flex-col items-center justify-center gap-2 px-2">
             {/* Force 3-row layout with grid */}
             <div className="grid w-full max-w-3xl grid-cols-1 gap-2">
                 {/* First row - 10 letters */}

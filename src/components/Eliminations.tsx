@@ -13,11 +13,12 @@ function Eliminations({ incorrectGuesses }: EliminationsProps) {
                     style={{ backgroundColor: item.color }}
                 >
                     {/* Show overlay if this language should be "eliminated" */}
-                    {index < incorrectGuesses && (
-                        <div className="absolute inset-0 z-10 flex items-center justify-center rounded bg-black/70">
-                            <span className="text-2xl text-white">💀</span>
-                        </div>
-                    )}
+                    {index < incorrectGuesses &&
+                        index !== PROGRAMMING_LANGUAGES.length - 1 && (
+                            <div className="absolute inset-0 z-10 flex items-center justify-center rounded bg-black/70">
+                                <span className="text-2xl text-white">💀</span>
+                            </div>
+                        )}
 
                     <span
                         className="font-Han block text-xl font-bold"

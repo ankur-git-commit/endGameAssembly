@@ -27,8 +27,8 @@ function Letters({
                                     : "bg-[#EC5D49]"
                                 : "bg-[#FCBA29]"
                         }`}
-                        onClick={(event) =>
-                            keyLogger((event.target as HTMLButtonElement).value)
+                        onClick={() =>
+                            keyLogger(letter)
                         }
                         disabled={isLetterPressed}
                     >

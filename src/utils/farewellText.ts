@@ -16,7 +16,7 @@ function farewellText(language: string) {
         `${language} has left the building`,
     ];
 
-    return options[randomNumberGenerator(options.length)];
+    return options[randomNumberGenerator(options)];
 }
 
 export default farewellText;

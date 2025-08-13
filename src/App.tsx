@@ -18,6 +18,7 @@ function App() {
         gameWon: false,
         gameLost: false,
     });
+    // console.log(incorrectGuesses);
 
     useEffect(() => {
         resetGame();
@@ -27,12 +28,13 @@ function App() {
         const newIncorrectGuesses = incorrectGuesses + 1;
         setIncorrectGuesses(newIncorrectGuesses);
 
-        // Update pogLang immediately in the same function
         if (newIncorrectGuesses <= PROGRAMMING_LANGUAGES.length) {
             const elimLanguage =
                 PROGRAMMING_LANGUAGES[newIncorrectGuesses - 1].title;
             setPogLang(elimLanguage);
         }
+
+        return newIncorrectGuesses;
     };
 
     const resetGame = () => {
@@ -48,47 +50,59 @@ function App() {
         if (gameState.gameLost || gameState.gameWon) {
             return;
         }
+        if (wordToGuess) {
+            setKeyPressed([...keyPressed, key]);
 
-        setKeyPressed([...keyPressed, key]);
-
-        const isKeyInWord = wordToGuess?.some((item) => {
-            return item.letter === key;
-        });
-
-        if (!isKeyInWord) {
-            handleIncorrectGuess();
-        }
-
-        const updatedWord = wordToGuess?.map((item) => {
-            return item.letter === key ? { ...item, isVisible: true } : item;
-        });
-        if (updatedWord) {
-            setWordToGuess(updatedWord);
-
-            const checkIfWon = updatedWord.every((item) => item.isVisible);
-            if (checkIfWon) {
-                setGameState({ gameWon: true, gameLost: false });
-            }
-        }
-
-        if (wordToGuess && incorrectGuesses > 7) {
-            setGameState({ ...gameState, gameLost: true });
-            const updateWordVisibility = wordToGuess.map((item) => {
-                if (item.isVisible === false) {
-                    return {
-                        ...item,
-                        isVisible: true,
-                        textColor: "#EC5D49",
-                    };
-                }
-                return item;
+            const isKeyInWord = wordToGuess.some((item) => {
+                return item.letter === key;
             });
 
-            setWordToGuess(updateWordVisibility);
+            if (!isKeyInWord) {
+                const newCount = handleIncorrectGuess();
+
+                if (newCount >= PROGRAMMING_LANGUAGES.length) {
+                    setGameState({ ...gameState, gameLost: true });
+                    const updateWordVisibility = wordToGuess.map((item) => {
+                        if (item.isVisible === false) {
+                            return {
+                                ...item,
+                                isVisible: true,
+                                textColor: "#EC5D49",
+                            };
+                        }
+                        return item;
+                    });
+
+                    setWordToGuess(updateWordVisibility);
+                }
+                return;
+            }
+
+            const updatedWord = wordToGuess.map((item) => {
+                return item.letter === key
+                    ? { ...item, isVisible: true }
+                    : item;
+            });
+
+            if (updatedWord) {
+                setWordToGuess(updatedWord);
+
+                const checkIfWon = updatedWord.every((item) => item.isVisible);
+                if (checkIfWon) {
+                    setGameState({ gameWon: true, gameLost: false });
+                    return;
+                }
+            }
+        } else {
+            window.alert("Something went wrong! Starting a new game...");
+            resetGame();
         }
     };
+
+    // console.log(incorrectGuesses);
+
     return (
-        <div className="flex h-screen flex-col items-center gap-10 bg-[#282726] py-30">
+        <div className="flex min-h-screen min-w-min flex-col items-center gap-10 bg-[#282726] py-30">
             <Title
                 gameState={gameState}
                 incorrectGuesses={incorrectGuesses}
