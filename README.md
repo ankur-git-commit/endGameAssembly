@@ -1,12 +1,12 @@
-# Assembly: Endgame 🎮
+# Assembly: Endgame
 
-A React-based word guessing game where you must save the programming world from Assembly language domination! Guess the hidden word before all programming languages get eliminated.
+A React-based word guessing game with a programming language theme. Players must guess the hidden word before all programming languages are eliminated.
 
-## 🎯 Game Overview
+## Game Overview
 
-Assembly: Endgame is a Hangman-style word guessing game with a programming twist. Instead of drawing a hangman, each incorrect guess eliminates a programming language from existence. Your mission: guess the word in under 8 attempts to keep the programming world diverse and safe!
+Assembly: Endgame is a Hangman-style word guessing game. Instead of drawing a hangman, each incorrect guess eliminates a programming language. Players must guess the word in under 8 attempts to win the game.
 
-## 📸 Screenshots
+## Screenshots
 
 ### Main Game Interface
 <img src="main.PNG" alt="Main game interface" width="600">
@@ -17,64 +17,64 @@ Assembly: Endgame is a Hangman-style word guessing game with a programming twist
 ### Game Over Screen
 <img src="mainlost.PNG" alt="Game lost screen" width="600">
 
-## 🚀 Features
+## Features
 
-- **Interactive Word Guessing**: Click letters to guess the hidden word
-- **Programming Language Theme**: 9 different programming languages at stake
-- **Visual Feedback**: Letters change color based on correct/incorrect guesses
-- **Dynamic Notifications**: Witty farewell messages for eliminated languages
-- **Responsive Design**: Modern UI built with Tailwind CSS
-- **TypeScript Support**: Full type safety throughout the application
+- Interactive word guessing with clickable letters
+- Programming language elimination theme
+- Visual feedback for correct and incorrect guesses
+- Dynamic notifications for game state changes
+- Responsive design built with Tailwind CSS
+- Full TypeScript support
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **React 19.1.0** - Frontend framework
-- **TypeScript** - Type safety and better development experience
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS 4.1.7** - Utility-first CSS framework
-- **Custom Fonts** - Google Fonts integration (Hanken Grotesk, Inter, Poppins, etc.)
+- React 19.1.0 - Frontend framework
+- TypeScript - Type safety and development experience
+- Vite - Build tool and development server
+- Tailwind CSS 4.1.7 - Utility-first CSS framework
+- Google Fonts - Custom font integration
 
-## 📦 Installation
+## Installation
 
-1. **Clone the repository**
+1. Clone the repository
    ```bash
    git clone <repository-url>
    cd assembly-endgame
    ```
 
-2. **Install dependencies**
+2. Install dependencies
    ```bash
    npm install
    ```
 
-3. **Start development server**
+3. Start development server
    ```bash
    npm run dev
    ```
 
-4. **Build for production**
+4. Build for production
    ```bash
    npm run build
    ```
 
-5. **Preview production build**
+5. Preview production build
    ```bash
    npm run preview
    ```
 
-## 🎮 How to Play
+## How to Play
 
-1. **Start the Game**: A random word is selected and displayed as blank spaces
-2. **Make Guesses**: Click on alphabet letters to guess
-3. **Track Progress**: 
+1. A random word is selected and displayed as blank spaces
+2. Click on alphabet letters to make guesses
+3. Letter colors indicate the result:
    - Green letters are correct and in the word
    - Red letters are incorrect
-   - Yellow letters haven't been guessed yet
-4. **Watch the Stakes**: Each wrong guess eliminates a programming language
-5. **Win Condition**: Reveal all letters before 8 incorrect guesses
-6. **Lose Condition**: Make 8 incorrect guesses and Assembly takes over!
+   - Yellow letters have not been guessed yet
+4. Each wrong guess eliminates a programming language
+5. Win by revealing all letters before making 8 incorrect guesses
+6. Lose by making 8 incorrect guesses
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -102,14 +102,14 @@ src/
 └── index.css                   # Global styles and fonts
 ```
 
-## 🔧 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run lint` - Run ESLint
 - `npm run preview` - Preview production build
 
-## 📝 Game Logic
+## Game Logic
 
 ### Word Selection
 - Random word chosen from a curated list of 400+ English words
@@ -126,9 +126,7 @@ src/
 - **Win**: All letters in the word are revealed
 - **Loss**: 8 incorrect guesses made (all languages eliminated)
 
-## 📄 License
+
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-
-**Save the programming world, one word at a time!** 🌍💻
