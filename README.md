@@ -4,7 +4,7 @@ A React-based word guessing game with a programming language theme. Players must
 
 ## Game Overview
 
-Assembly: Endgame is a Hangman-style word guessing game. Instead of drawing a hangman, each incorrect guess eliminates a programming language. Players must guess the word in under 8 attempts to win the game.
+Assembly: Endgame is a Hangman-style word guessing game. Instead of drawing a hangman, each incorrect guess eliminates a programming language. Players must guess the word within 8 attempts to win the game.
 
 ## Screenshots
 
