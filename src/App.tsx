@@ -71,7 +71,7 @@ function App() {
             }
         }
 
-        if (wordToGuess && incorrectGuesses == 7) {
+        if (wordToGuess && incorrectGuesses > 7) {
             setGameState({ ...gameState, gameLost: true });
             const updateWordVisibility = wordToGuess.map((item) => {
                 if (item.isVisible === false) {
