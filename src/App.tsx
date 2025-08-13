@@ -58,7 +58,6 @@ function App() {
         if (!isKeyInWord) {
             handleIncorrectGuess();
         }
-        console.log(incorrectGuesses);
 
         const updatedWord = wordToGuess?.map((item) => {
             return item.letter === key ? { ...item, isVisible: true } : item;
@@ -72,7 +71,7 @@ function App() {
             }
         }
 
-        if (wordToGuess && incorrectGuesses == 8) {
+        if (wordToGuess && incorrectGuesses == 7) {
             setGameState({ ...gameState, gameLost: true });
             const updateWordVisibility = wordToGuess.map((item) => {
                 if (item.isVisible === false) {

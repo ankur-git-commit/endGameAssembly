@@ -5,7 +5,6 @@ function NotificationBanner({ gameState, incorrectGuesses, pogLang }: any) {
     const farewellMessage = useMemo(() => {
         if (incorrectGuesses > 0) {
             const message = farewellText(pogLang);
-            console.log(message);
             return message;
         }
         return null;

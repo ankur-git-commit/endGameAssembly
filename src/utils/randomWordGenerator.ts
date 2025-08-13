@@ -19,6 +19,5 @@ export const randomWordGenerator = () => {
             textColor: "#F9F4DA",
         };
     });
-    console.log(randomWord);
     return wordObject;
 };
